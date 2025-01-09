@@ -1,5 +1,9 @@
+import { Piano } from "../organisms/Piano";
+
 const Home = () => (
-    <>Home Page</>
+    <>Home Page
+    <Piano />
+    </>
 )
 
 export { Home };
