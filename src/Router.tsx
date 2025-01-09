@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import styled from '@emotion/styled/macro';
 import { Blog } from './components/pages/Blog';
+import { Contact } from './components/pages/Contact';
 import { Home } from './components/pages/Home';
 import { ErrorPage } from './components/pages/Error';
 import { Projects } from './components/pages/Projects';
@@ -42,6 +43,10 @@ const routes: Array<RouteObject> = [
             {
                 path: '/blog',
                 element: <Blog />,
+            },
+            {
+                path: '/contact',
+                element: <Contact />,
             },
             {
                 path: '/home',
