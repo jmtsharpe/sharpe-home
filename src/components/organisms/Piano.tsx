@@ -16,7 +16,7 @@ const Key = ({note, shownNote, type}: {note: string; type: string, key: number, 
     }
     return (
         <StyledKey onClick={playNote} type={type}>
-            {note}
+            {shownNote}
         </StyledKey>
     )   
 }
