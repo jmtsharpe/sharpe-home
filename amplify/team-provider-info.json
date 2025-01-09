@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sharpehome-dev-41835-authRole",
+      "UnauthRoleArn": "arn:aws:iam::717329744971:role/amplify-sharpehome-dev-41835-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::717329744971:role/amplify-sharpehome-dev-41835-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-sharpehome-dev-41835-deployment",
+      "UnauthRoleName": "amplify-sharpehome-dev-41835-unauthRole",
+      "StackName": "amplify-sharpehome-dev-41835",
+      "StackId": "arn:aws:cloudformation:us-east-1:717329744971:stack/amplify-sharpehome-dev-41835/c3b46db0-ce72-11ef-8ca8-0efab9cacd29",
+      "AmplifyAppId": "d2ltaglhh4f22c"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}
