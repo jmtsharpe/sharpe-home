@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { Home } from './components/pages/Home';
 import { ErrorPage } from './components/pages/Error';
+import { AboutMe } from './components/pages/AboutMe';
 
 type Path = "/" | "/home";
 
@@ -20,6 +21,10 @@ const routes: Array<RouteObject> = [
             <Outlet />
         ),
         children: [
+            {
+                path: '/about',
+                element: <AboutMe />,
+            },
             {
                 path: '/home',
                 element: <Home />,
