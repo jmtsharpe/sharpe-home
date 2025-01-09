@@ -1,7 +1,9 @@
 import styled from "@emotion/styled/macro";
 
 const Header = () => (
+    <>
     <StyledHeader>Welcome to Sharpe Home</StyledHeader>
+    </>
 );
 
 const StyledHeader = styled.div`

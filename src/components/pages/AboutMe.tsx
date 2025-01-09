@@ -6,7 +6,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  font-family: "Arial, sans-serif";
   color: #333;
   line-height: 1.6;
 `;
@@ -92,6 +91,16 @@ const AboutMe = () => {
                         rel="noopener noreferrer"
                     >
                         github.com/jmtsharpe
+                    </Link>
+                </p>
+                <p>
+                    LinkedIn:{" "}
+                    <Link
+                        href="https://linkedin.com/jmtsharpe"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        linkedin.com/jmtsharpe
                     </Link>
                 </p>
             </Section>
