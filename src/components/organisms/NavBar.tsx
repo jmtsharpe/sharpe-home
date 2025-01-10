@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Palette } from "../../fixtures/pallette";
 
 const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #2c3e50;
+  background-color: ${Palette.white};
   color: #ffffff;
   box-sizing: border-box;
   position: fixed;
@@ -21,7 +22,7 @@ const NavbarContainer = styled.nav`
 const Logo = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ecf0f1;
+  color: ${Palette.jet};
 `;
 
 const NavLinks = styled.ul<{ isOpen: boolean }>`
