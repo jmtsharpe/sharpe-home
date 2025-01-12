@@ -9,7 +9,7 @@ import { Blog } from "./components/pages/Blog";
 import { Contact } from "./components/pages/Contact";
 import { Home } from "./components/pages/Home";
 import { ErrorPage } from "./components/pages/Error";
-import { Projects } from "./components/pages/Projects";
+import { Weather } from "./components/pages/Weather";
 import { AboutMe } from "./components/pages/AboutMe";
 import { Navbar } from "./components/organisms/NavBar";
 
@@ -20,7 +20,6 @@ const Redirect = ({ to }: { to: Path }) => {
 };
 
 const BodyContainer = styled.div`
-  margin-top: 76px;
   min-height: 100vh;
 `;
 
@@ -53,8 +52,8 @@ const routes: Array<RouteObject> = [
         element: <Home />,
       },
       {
-        path: "/projects",
-        element: <Projects />,
+        path: "/weather",
+        element: <Weather />,
       },
       {
         path: "/",

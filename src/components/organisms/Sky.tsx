@@ -1,8 +1,11 @@
 import styled from "@emotion/styled/macro";
 import { Cloud } from "../molecules/Cloud";
+import { CloudLayer } from "./CloudLayer";
 
 type SkyProps = {
-  total?: number;
+  cloudsPerLayer?: number;
+  layers?: number;
+  cloudColor?: string[];
 };
 
 const CloudsContainer = styled.div`
@@ -14,30 +17,31 @@ const CloudsContainer = styled.div`
 `;
 
 const SkyContainer = styled.div`
-  width: 100vh;
+  width: 100%;
   height: 100vh;
 `;
 
-function randomIntFromInterval(min: number, max: number) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-const CloudContainer = styled.div`
-  position: absolute;
-`;
-
-const Sky = ({ total = 20 }: SkyProps) => (
+const Sky = ({
+  cloudsPerLayer = 2,
+  layers = 1,
+  cloudColor = ["white"],
+}: SkyProps) => (
   <SkyContainer>
     <CloudsContainer>
-      {Array(total)
+      {Array(layers)
         .fill(1)
-        .map(() => {
-          const top = `${randomIntFromInterval(100, -50)}%`;
-          const left = `${randomIntFromInterval(100, -50)}%`;
+        .map((item, index) => {
           return (
-            <CloudContainer style={{ top, left }}>
-              <Cloud />
-            </CloudContainer>
+            <CloudLayer
+              layer={index}
+              zIndex={layers - index}
+              total={cloudsPerLayer}
+              cloudSize={{
+                height: 400 / (index + 1),
+                width: 600 / (index + 1),
+              }}
+              color={cloudColor[index] || "white"}
+            />
           );
         })}
     </CloudsContainer>

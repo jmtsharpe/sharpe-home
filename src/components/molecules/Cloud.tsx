@@ -1,11 +1,8 @@
 import { useMemo } from "react";
 import styled from "@emotion/styled/macro";
 import { CloudPuff } from "../atoms/CloudPuff";
+import { randomIntFromInterval } from "../../utils/math";
 
-function randomIntFromInterval(min: number, max: number) {
-  // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
 type PuffDimensionsArgs = {
   x: number;
   y: number;
@@ -31,25 +28,22 @@ const getPuffDimensions = ({
 
 const StyledCloud = styled.div`
   position: absolute;
-  left: ${randomIntFromInterval(100, 0)}%;
-  top: ${randomIntFromInterval(100, 0)}%;
 `;
 
 type CloudProps = {
-  height?: number;
-  width?: number;
+  cloudSize?: { height: number; width: number };
   fill?: string;
   lining?: { width: number; color: string };
   puffs?: number;
 };
 
 const Cloud = ({
-  height = 400,
-  width = 600,
+  cloudSize = { height: 400, width: 600 },
   fill = "white",
   lining,
   puffs = 5,
 }: CloudProps) => {
+  const { height, width } = cloudSize;
   const getPuffs = useMemo(() => {
     const puffValues: PuffDimensionsArgs = {
       ymax: height - height / 4,
@@ -63,7 +57,7 @@ const Cloud = ({
     for (var i = 0; i < puffs; i++) {
       const values = getPuffDimensions(puffValues);
 
-      newPuffs.push(<CloudPuff {...values} lining={lining} />);
+      newPuffs.push(<CloudPuff {...values} fill={fill} lining={lining} />);
     }
     return newPuffs;
   }, []);
