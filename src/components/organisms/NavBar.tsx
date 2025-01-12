@@ -7,7 +7,7 @@ const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0px 20px;
   background-color: ${Palette.white};
   color: #ffffff;
   box-sizing: border-box;
@@ -28,10 +28,7 @@ const Logo = styled.div`
 const NavLinks = styled.ul<{ isOpen: boolean }>`
   list-style: none;
   display: flex;
-  @media (min-width: 769px) {
-  
-    gap: 20px;
-  }
+  margin: 0;
 
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
@@ -50,20 +47,19 @@ const NavLinks = styled.ul<{ isOpen: boolean }>`
 const NavLinkItem = styled.li`
   a {
     text-decoration: none;
-    color: #ecf0f1;
+    color: ${Palette.jet};
     font-size: 1rem;
     font-weight: 500;
+    padding: 10px;
 
     &:hover {
-      color: #1abc9c;
+      color: ${Palette.white};
+      background: ${Palette.jet};
     }
     @media (max-width: 768px) {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        :hover {
-            background: black;
-        }
+      display: block;
+      width: 100%;
+      padding: 10px;
     }
   }
 `;
@@ -86,37 +82,37 @@ const Hamburger = styled.div`
 `;
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-    return (
-        <NavbarContainer>
-            <Logo>My Portfolio</Logo>
-            <Hamburger onClick={toggleMenu}>
-                <div />
-                <div />
-                <div />
-            </Hamburger>
-            <NavLinks isOpen={isOpen} onClick={toggleMenu}>
-                <NavLinkItem>
-                    <Link to="/">Home</Link>
-                </NavLinkItem>
-                <NavLinkItem>
-                    <Link to="/about">About Me</Link>
-                </NavLinkItem>
-                <NavLinkItem>
-                    <Link to="/projects">Projects</Link>
-                </NavLinkItem>
-                <NavLinkItem>
-                    <Link to="/blog">Blog</Link>
-                </NavLinkItem>
-                <NavLinkItem>
-                    <Link to="/contact">Contact</Link>
-                </NavLinkItem>
-            </NavLinks>
-        </NavbarContainer>
-    );
+  return (
+    <NavbarContainer>
+      <Logo>My Portfolio</Logo>
+      <Hamburger onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
+      </Hamburger>
+      <NavLinks isOpen={isOpen} onClick={toggleMenu}>
+        <NavLinkItem>
+          <Link to="/">Home</Link>
+        </NavLinkItem>
+        <NavLinkItem>
+          <Link to="/about">About Me</Link>
+        </NavLinkItem>
+        <NavLinkItem>
+          <Link to="/projects">Projects</Link>
+        </NavLinkItem>
+        <NavLinkItem>
+          <Link to="/blog">Blog</Link>
+        </NavLinkItem>
+        <NavLinkItem>
+          <Link to="/contact">Contact</Link>
+        </NavLinkItem>
+      </NavLinks>
+    </NavbarContainer>
+  );
 };
 
-export {Navbar};
+export { Navbar };

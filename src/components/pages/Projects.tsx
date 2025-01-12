@@ -1,5 +1,9 @@
+import { Sky } from "../organisms/Sky";
+
 const Projects = () => (
-    <>Projects coming soon</>
-)
+  <>
+    <Sky></Sky>
+  </>
+);
 
 export { Projects };

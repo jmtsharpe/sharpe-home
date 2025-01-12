@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
+  <!-- Background -->
+  <rect width="1200" height="400" fill="#FFFFFF" />
+
+  <!-- Layered upright mountains -->
+  <!-- Back layer -->
+  <polygon points="0,0 150,150 300,0 450,100 600,0 750,200 900,0 1050,100 1200,0" fill="#363537" />
+
+  <!-- Mid layer -->
+  <polygon points="0,0 120,80 240,30 360,100 480,60 600,120 720,50 840,90 960,40 1080,80 1200,0" fill="#EF2D56" />
+  
+  <!-- Front layer -->
+  <polygon points="0,0 0,100 200,0 400,150 600,0 800,100 1000,0 1200,50 1200,0" fill="#ED7D3A" />
+</svg>

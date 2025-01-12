@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Palette } from "../../fixtures/pallette";
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -8,7 +9,7 @@ const FooterContainer = styled.footer`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #2c3e50;
+  background-color: ${Palette.jet};
   color: #ecf0f1;
   font-size: 0.9rem;
   box-sizing: border-box;
@@ -45,21 +46,27 @@ const SocialLinks = styled.div`
 `;
 
 const Footer = () => {
-    return (
-        <FooterContainer>
-            <Copyright>
-                &copy; {new Date().getFullYear()} Sharpe Inc.
-            </Copyright>
-            <SocialLinks>
-                <a href="https://github.com/jmtsharpe" target="_blank" rel="noopener noreferrer">
-                    <FaGithub/>
-                </a>
-                <a href="https://linkedin.com/in/jmtsharpe" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin/>
-                </a>
-            </SocialLinks>
-        </FooterContainer>
-    );
+  return (
+    <FooterContainer>
+      <Copyright>&copy; {new Date().getFullYear()} Sharpe Inc.</Copyright>
+      <SocialLinks>
+        <a
+          href="https://github.com/jmtsharpe"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://linkedin.com/in/jmtsharpe"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin />
+        </a>
+      </SocialLinks>
+    </FooterContainer>
+  );
 };
 
-export {Footer};
+export { Footer };

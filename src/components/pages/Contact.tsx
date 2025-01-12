@@ -90,50 +90,62 @@ const SocialLinks = styled.div`
 `;
 
 const Contact = () => {
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        alert("Message submitted!"); // Replace this with actual form submission logic
-    };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Message submitted!"); // Replace this with actual form submission logic
+  };
 
-    return (
-        <ContactContainer>
-            <h1>Contact Me</h1>
-            <Form onSubmit={handleSubmit}>
-                <div>
-                    <Label htmlFor="name">Name</Label>
-                    <Input type="text" id="name" name="name" required />
-                </div>
-                <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input type="email" id="email" name="email" required />
-                </div>
-                <div>
-                    <Label htmlFor="phone1">Phone Number 1</Label>
-                    <Input type="tel" id="phone1" name="phone1" required />
-                </div>
-                <div>
-                    <Label htmlFor="phone2">Phone Number 2</Label>
-                    <Input type="tel" id="phone2" name="phone2" />
-                </div>
-                <div>
-                    <Label htmlFor="message">Message</Label>
-                    <TextArea id="message" name="message" rows={5} required />
-                </div>
-                <Button type="submit">Send Message</Button>
-            </Form>
-            <SocialLinks>
-                <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer">
-                    GitHub
-                </a>
-                <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-                <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer">
-                    Twitter
-                </a>
-            </SocialLinks>
-        </ContactContainer>
-    );
+  return (
+    <ContactContainer>
+      <h1>Contact Me</h1>
+      <Form onSubmit={handleSubmit}>
+        <div>
+          <Label htmlFor="name">Name</Label>
+          <Input type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <Label htmlFor="email">Email</Label>
+          <Input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <Label htmlFor="phone1">Phone Number 1</Label>
+          <Input type="tel" id="phone1" name="phone1" required />
+        </div>
+        <div>
+          <Label htmlFor="phone2">Phone Number 2</Label>
+          <Input type="tel" id="phone2" name="phone2" />
+        </div>
+        <div>
+          <Label htmlFor="message">Message</Label>
+          <TextArea id="message" name="message" rows={5} required />
+        </div>
+        <Button type="submit">Send Message</Button>
+      </Form>
+      <SocialLinks>
+        <a
+          href="https://github.com/your-github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://linkedin.com/in/your-linkedin"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://twitter.com/your-twitter"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Twitter
+        </a>
+      </SocialLinks>
+    </ContactContainer>
+  );
 };
 
 export { Contact };
