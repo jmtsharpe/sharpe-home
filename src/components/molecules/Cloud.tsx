@@ -33,14 +33,14 @@ const StyledCloud = styled.div`
 type CloudProps = {
   cloudSize?: { height: number; width: number };
   fill?: string;
-  lining?: { width: number; color: string };
+  stroke?: { width: number; color: string };
   puffs?: number;
 };
 
 const Cloud = ({
   cloudSize = { height: 400, width: 600 },
   fill = "white",
-  lining,
+  stroke,
   puffs = 5,
 }: CloudProps) => {
   const { height, width } = cloudSize;
@@ -57,7 +57,7 @@ const Cloud = ({
     for (var i = 0; i < puffs; i++) {
       const values = getPuffDimensions(puffValues);
 
-      newPuffs.push(<CloudPuff {...values} fill={fill} lining={lining} />);
+      newPuffs.push(<CloudPuff {...values} fill={fill} stroke={stroke} />);
     }
     return newPuffs;
   }, []);
@@ -69,25 +69,25 @@ const Cloud = ({
         xmlns="http://www.w3.org/2000/svg"
         fill={fill || "white"}
       >
-        {lining
+        {stroke
           ? [
               <circle
                 cx={width / 3}
                 cy={height / 2}
-                r={height / 4 + lining.width}
-                fill={lining.color}
+                r={height / 4 + stroke.width}
+                fill={stroke.color}
               />,
               <circle
                 cx={width / 2}
                 cy={height / 2}
-                r={height / 4 + lining.width}
-                fill={lining.color}
+                r={height / 4 + stroke.width}
+                fill={stroke.color}
               />,
               <circle
                 cx={(width * 2) / 3}
                 cy={height / 2}
-                r={height / 4 + lining.width}
-                fill={lining.color}
+                r={height / 4 + stroke.width}
+                fill={stroke.color}
               />,
             ]
           : []}

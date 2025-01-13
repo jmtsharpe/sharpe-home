@@ -1,11 +1,11 @@
 import styled from "@emotion/styled/macro";
-import { Cloud } from "../molecules/Cloud";
+import { useMemo } from "react";
 import { CloudLayer } from "./CloudLayer";
 
 type SkyProps = {
   cloudsPerLayer?: number;
   layers?: number;
-  cloudColor?: string[];
+  cloudColor?: { fill: string; stroke: string }[];
 };
 
 const CloudsContainer = styled.div`
@@ -24,28 +24,33 @@ const SkyContainer = styled.div`
 const Sky = ({
   cloudsPerLayer = 2,
   layers = 1,
-  cloudColor = ["white"],
-}: SkyProps) => (
-  <SkyContainer>
-    <CloudsContainer>
-      {Array(layers)
+  cloudColor = [{ fill: "white", stroke: "white" }],
+}: SkyProps) => {
+  const clouds = useMemo(
+    () =>
+      Array(layers)
         .fill(1)
         .map((item, index) => {
+          debugger;
           return (
             <CloudLayer
               layer={index}
               zIndex={layers - index}
               total={cloudsPerLayer}
               cloudSize={{
-                height: 400 / (index + 1),
-                width: 600 / (index + 1),
+                height: 400 * ((100 - index * 10) / 100),
+                width: 600 * ((100 - index * 10) / 100),
               }}
-              color={cloudColor[index] || "white"}
+              color={cloudColor[index]}
             />
           );
-        })}
-    </CloudsContainer>
-  </SkyContainer>
-);
-
+        }),
+    [cloudsPerLayer, layers],
+  );
+  return (
+    <SkyContainer>
+      <CloudsContainer>{clouds}</CloudsContainer>
+    </SkyContainer>
+  );
+};
 export { Sky };

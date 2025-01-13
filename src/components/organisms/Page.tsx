@@ -8,20 +8,20 @@ const PageWrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  position: relative;
 `;
 
-const Header = styled.header`
-  background: ${Palette.pumpkin};
+const Header = styled.header<{ backgroundColor?: string; textColor?: string }>`
+  background: ${({ backgroundColor }) => backgroundColor || Palette.pumpkin};
   font-weight: bold;
-  color: white;
-  padding: 10px;
+  color: ${({ textColor }) => textColor || Palette.white};
+  padding: 40px;
   text-align: center;
   font-size: 2.5rem;
 `;
 
 const MainContent = styled.main<{ background: "mountains" | "buildings" }>`
   flex: 1;
-  padding: 20px;
   background-color: #f5f5f5;
   background: url(../../assets/${({ background }) => background}.svg);
 `;
@@ -37,6 +37,8 @@ const Footer = styled.footer`
 // Define Props Interface
 interface PageProps {
   title: string; // The header title
+  headerColor?: string;
+  headerTextColor?: string;
   children: ReactNode; // The main content (ReactNode to allow flexibility)
   footerText?: string; // Optional footer text
   background?: "buildings" | "mountains";
@@ -45,13 +47,17 @@ interface PageProps {
 // Functional Component
 const Page: React.FC<PageProps> = ({
   title,
+  headerColor,
+  headerTextColor,
   children,
   footerText,
   background,
 }) => {
   return (
     <PageWrapper>
-      s<Header>{title}</Header>
+      <Header backgroundColor={headerColor} textColor={headerTextColor}>
+        {title}
+      </Header>
       <MainContent background={background || "mountains"}>
         {children}
       </MainContent>

@@ -102,7 +102,7 @@ const Navbar = () => {
           <Link to="/about">About Me</Link>
         </NavLinkItem>
         <NavLinkItem>
-          <Link to="/projects">Weather</Link>
+          <Link to="/weather">Weather</Link>
         </NavLinkItem>
         <NavLinkItem>
           <Link to="/blog">Blog</Link>

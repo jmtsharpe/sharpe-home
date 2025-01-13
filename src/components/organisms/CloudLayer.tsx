@@ -3,7 +3,7 @@ import { Cloud } from "../molecules/Cloud";
 import { randomIntFromInterval } from "../../utils/math";
 
 type CloudLayerProps = {
-  color: string;
+  color?: { fill: string; stroke: string };
   cloudSize: { height: number; width: number };
   total: number;
   zIndex: number;
@@ -19,18 +19,19 @@ const CloudsContainer = styled.div`
 `;
 const CloudLayer = ({
   cloudSize,
-  color = "white",
+  color = { fill: "white", stroke: "white" },
   total = 5,
   zIndex,
   layer,
 }: CloudLayerProps) => (
   <CloudsContainer>
-    {Array(total)
+    {Array(total * (layer + 1))
       .fill(1)
       .map(() => {
-        const shift = layer * 10;
-        const top = `${randomIntFromInterval(10 + shift, -30 + shift)}%`;
-        const left = `${randomIntFromInterval(80, -20)}%`;
+        const shift = layer * 5;
+        const top = `${randomIntFromInterval(shift, -20 + shift)}%`;
+        const left = `${randomIntFromInterval(80, -40)}%`;
+        const { fill, stroke } = color;
         return (
           <CloudContainer
             style={{
@@ -41,7 +42,11 @@ const CloudLayer = ({
               zIndex,
             }}
           >
-            <Cloud fill={color} cloudSize={cloudSize} />
+            <Cloud
+              fill={fill}
+              stroke={{ color: stroke, width: 1 }}
+              cloudSize={cloudSize}
+            />
           </CloudContainer>
         );
       })}

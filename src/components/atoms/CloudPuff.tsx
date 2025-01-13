@@ -3,22 +3,22 @@ const CloudPuff = ({
   cy,
   r,
   fill,
-  lining,
+  stroke,
 }: {
   cx: number;
   cy: number;
   r: number;
   fill?: string;
-  lining?: { color: string; width: number };
+  stroke?: { color: string; width: number };
 }) => {
   return (
     <>
-      {lining && (
+      {stroke && (
         <circle
           cx={`${cx}`}
           cy={`${cy}`}
-          r={`${r + lining.width}`}
-          fill={lining.color}
+          r={`${r + stroke.width}`}
+          fill={stroke.color}
         />
       )}
       <circle cx={`${cx}`} cy={`${cy}`} r={`${r}`} fill={fill || "white"} />
