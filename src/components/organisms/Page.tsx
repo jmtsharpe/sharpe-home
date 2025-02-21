@@ -23,7 +23,6 @@ const Header = styled.header<{ backgroundColor?: string; textColor?: string }>`
 const MainContent = styled.main<{ background: "mountains" | "buildings" }>`
   flex: 1;
   background-color: #f5f5f5;
-  background: url(../../assets/${({ background }) => background}.svg);
 `;
 
 const Footer = styled.footer`

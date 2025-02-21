@@ -50,8 +50,8 @@ const Cloud = ({
       xmax: (width * 3) / 4,
       y: height / 4,
       x: width / 4,
-      maxSize: (height / 2) * 0.5,
-      minSize: (height / 2) * 0.1,
+      maxSize: height / 2,
+      minSize: height / 3,
     };
     const newPuffs = [];
     for (var i = 0; i < puffs; i++) {
@@ -64,8 +64,8 @@ const Cloud = ({
   return (
     <StyledCloud>
       <svg
-        height={height}
-        width={width}
+        height={height * 2}
+        width={width * 2}
         xmlns="http://www.w3.org/2000/svg"
         fill={fill || "white"}
       >

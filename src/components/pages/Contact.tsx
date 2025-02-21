@@ -27,6 +27,11 @@ const Form = styled.form`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
+const FormGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Label = styled.label`
   font-size: 1rem;
   color: #555;
@@ -99,26 +104,26 @@ const Contact = () => {
     <ContactContainer>
       <h1>Contact Me</h1>
       <Form onSubmit={handleSubmit}>
-        <div>
+        <FormGroup>
           <Label htmlFor="name">Name</Label>
           <Input type="text" id="name" name="name" required />
-        </div>
-        <div>
+        </FormGroup>
+        <FormGroup>
           <Label htmlFor="email">Email</Label>
           <Input type="email" id="email" name="email" required />
-        </div>
-        <div>
+        </FormGroup>
+        <FormGroup>
           <Label htmlFor="phone1">Phone Number 1</Label>
           <Input type="tel" id="phone1" name="phone1" required />
-        </div>
-        <div>
+        </FormGroup>
+        <FormGroup>
           <Label htmlFor="phone2">Phone Number 2</Label>
           <Input type="tel" id="phone2" name="phone2" />
-        </div>
-        <div>
+        </FormGroup>
+        <FormGroup>
           <Label htmlFor="message">Message</Label>
           <TextArea id="message" name="message" rows={5} required />
-        </div>
+        </FormGroup>
         <Button type="submit">Send Message</Button>
       </Form>
       <SocialLinks>

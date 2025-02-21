@@ -12,7 +12,7 @@ const Weather = () => {
   const { cloudsPerLayer, layers, cloudColor } = useMemo(
     () => ({
       cloudsPerLayer:
-        Math.floor(Number(weather?.current?.cloud_cover) / 3) || 0,
+        Math.floor(Number(weather?.current?.cloud_cover) / 20) || 0,
       layers: Math.ceil(Number(weather?.current?.cloud_cover) / 20) || 0,
       cloudColor: [
         { fill: "#fff", stroke: "#eee" },

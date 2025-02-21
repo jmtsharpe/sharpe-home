@@ -32,11 +32,11 @@ const notes = [
 
 const PianoWrapper = styled.div<{ open: boolean }>`
   display: flex;
-  flex
   justify-content: center;
-  align-items: top;
-  padding: 20px;
-  transition: height 1s linear;
+  align-items: flex-start;
+  margin: 20px;
+  transition: height 0.5s ease-in-out;
+  overflow: hidden;
   height: ${({ open }) => (open ? "200px" : "0px")};
 `;
 
@@ -45,16 +45,20 @@ const Key = styled.div<{ isBlack: boolean }>`
   height: ${(props) => (props.isBlack ? "150px" : "200px")};
   margin: 0 2px;
   background-color: ${(props) => (props.isBlack ? "black" : "white")};
-  border: 1px solid #000;
+  border: 1px solid ${(props) => (props.isBlack ? "white" : "black")};
   z-index: ${(props) => (props.isBlack ? 2 : 1)};
   margin-left: ${(props) => (props.isBlack ? "-20px" : "0")};
   margin-right: ${(props) => (props.isBlack ? "-20px" : "0")};
   cursor: pointer;
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: red;
+  }
 
   &:active {
     background-color: ${(props) => (props.isBlack ? "#333" : "#ddd")};
   }
-  align-content: end;
 `;
 
 const NoteLabel = styled.span<{ isBlack: boolean }>`
