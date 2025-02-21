@@ -31,7 +31,7 @@ const Sky = ({
       Array(layers)
         .fill(1)
         .map((item, index) => {
-          debugger;
+          console.log(item);
           return (
             <CloudLayer
               layer={index}

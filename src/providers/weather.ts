@@ -15,37 +15,37 @@ const WeatherLocations = {
   },
 };
 
-const response = {
-  latitude: 40.710335,
-  longitude: -73.99309,
-  generationtime_ms: 0.041604042053222656,
-  utc_offset_seconds: 0,
-  timezone: "GMT",
-  timezone_abbreviation: "GMT",
-  elevation: 51.0,
-  current_units: {
-    time: "unixtime",
-    interval: "seconds",
-    temperature_2m: "°C",
-    is_day: "",
-    precipitation: "mm",
-    rain: "mm",
-    showers: "mm",
-    snowfall: "cm",
-    cloud_cover: "%",
-  },
-  current: {
-    time: 1736709300,
-    interval: 900,
-    temperature_2m: 6.0,
-    is_day: 1,
-    precipitation: 0.0,
-    rain: 0.0,
-    showers: 0.0,
-    snowfall: 0.0,
-    cloud_cover: 7,
-  },
-};
+// const response = {
+//   latitude: 40.710335,
+//   longitude: -73.99309,
+//   generationtime_ms: 0.041604042053222656,
+//   utc_offset_seconds: 0,
+//   timezone: "GMT",
+//   timezone_abbreviation: "GMT",
+//   elevation: 51.0,
+//   current_units: {
+//     time: "unixtime",
+//     interval: "seconds",
+//     temperature_2m: "°C",
+//     is_day: "",
+//     precipitation: "mm",
+//     rain: "mm",
+//     showers: "mm",
+//     snowfall: "cm",
+//     cloud_cover: "%",
+//   },
+//   current: {
+//     time: 1736709300,
+//     interval: 900,
+//     temperature_2m: 6.0,
+//     is_day: 1,
+//     precipitation: 0.0,
+//     rain: 0.0,
+//     showers: 0.0,
+//     snowfall: 0.0,
+//     cloud_cover: 7,
+//   },
+// };
 
 type Location = keyof typeof WeatherLocations;
 
